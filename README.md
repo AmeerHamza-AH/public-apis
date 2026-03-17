@@ -41,7 +41,35 @@ Join our [Discord server](https://discord.com/invite/hgjA78638n/?utm_source=Gith
 * [API for this project](https://github.com/davemachado/public-api)
 * [Issues](https://github.com/public-apis/public-apis/issues)
 * [Pull Requests](https://github.com/public-apis/public-apis/pulls)
-* [LICENSE](LICENSE) 
+* [LICENSE](LICENSE)
+
+<br />
+
+## Chart.js API Data
+
+The repository includes a [`api-charts-data.json`](api-charts-data.json) file with pre-built Chart.js configurations for visualizing the public APIs collection. It contains 6 ready-to-use charts:
+
+| Chart | Type | Description |
+|:---|:---|:---|
+| `apisByCategory` | Horizontal Bar | All 51 categories ranked by number of APIs |
+| `authDistribution` | Doughnut | Authentication type breakdown (No Auth, API Key, OAuth) |
+| `httpsSupport` | Pie | HTTPS vs HTTP-only support (93% HTTPS) |
+| `corsSupport` | Pie | CORS support distribution |
+| `topCategories` | Polar Area | Top 10 API categories |
+| `authVsCategory` | Stacked Bar | Authentication types across top 10 categories |
+
+**Quick Usage:**
+```js
+import chartData from './api-charts-data.json';
+
+const ctx = document.getElementById('myChart');
+new Chart(ctx, chartData.charts.apisByCategory);
+```
+
+**Stats at a Glance:**
+- **1,436** total APIs across **51** categories
+- **47%** require no authentication
+- **93%** support HTTPS
 
 <br />
 
